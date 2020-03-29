@@ -1,12 +1,22 @@
 // Update with your config settings.
 
 module.exports = {
+  test: {
+    client: 'sqlite3',
+    connection: {
+      filename: './src/database/test.sqlite'
+    },
+    migrations: {
+      directory: './src/database/migrations'
+    },
+    useNullAsDefault: true
+  },
 
   development: {
     client: 'postgresql',
     connection: {
       database: 'bethehero',
-      user:     'postgres',
+      user: 'postgres',
       password: 'r00tr00t'
     },
     pool: {
@@ -23,7 +33,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'my_db',
-      user:     'username',
+      user: 'username',
       password: 'password'
     },
     pool: {
@@ -39,7 +49,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'my_db',
-      user:     'username',
+      user: 'username',
       password: 'password'
     },
     pool: {
@@ -50,5 +60,4 @@ module.exports = {
       tableName: 'knex_migrations'
     }
   }
-
 };
